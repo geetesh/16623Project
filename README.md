@@ -3,7 +3,7 @@
 ##Realtime Pose Estimation using fiducial marker tracking
 
 ##Summary
-Fiducials are reliable approach when trying to estimate pose accurately. In this project I plan to detect and track a marker in realtime and obtain the pose.
+Fiducials are a reliable approach when trying to estimate pose accurately. In this project I plan to detect and track a marker in realtime and obtain the pose and render objects in scene relative to this pose.
 
 ##Background
 OpenCV will be used to detect the fiducial marker and then high speed camera at 120FPS will be used to track the fiducial patch to achieve realtime pose estimate. Due to realtime requirement a correlation based tracker will be used to track the required patch. 
