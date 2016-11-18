@@ -6,10 +6,14 @@
 //  Copyright © 2016 geetesh dubey. All rights reserved.
 //
 
+#import "MyVideoCamera.h"
 #import <UIKit/UIKit.h>
+#import <opencv2/videoio/cap_ios.h>
+#import <opencv2/opencv.hpp>
 
-@interface ViewController : UIViewController
+using namespace cv;
 
+@interface ViewController : UIViewController<MyVideoCameraDelegate>
 
 @end
 
