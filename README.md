@@ -18,12 +18,16 @@ For AR applications fiducials need to be detected and tracked in realtime. Fiduc
 
 ##Schedule
 
-- [ ] Week1: Access High speed camera and run fiducial detector
+- [x] Week1: Access High speed camera and run fiducial detector
 
-- [ ] Week2: Run MOSSE tracker as discussed in class to do high speed correlation based tracking
+- [x] Week2: Run MOSSE tracker as discussed in class to do high speed correlation based tracking
 
-- [ ] Week3: Run high speed tracking with patch initialised from fiducial detector and implement recovery in case marker is lost
+- [x] Week3.0: Run high speed tracking with patch initialised from fiducial detector and implement recovery in case marker is lost
 
-- [ ] Week4: Slack week in case above goals aren't met
+- [ ] Week: 3.5 Calibrate Camera
+
+- [ ] Week4.0: Estimate Pose
+
+- [ ] Week4.5: Slack week in case above goals aren't met
 
 - [ ] Week5: Display/Render an object in scene
