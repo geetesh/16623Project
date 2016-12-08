@@ -24,9 +24,9 @@ For AR applications fiducials need to be detected and tracked in realtime. Fiduc
 
 - [x] Week3.0: Run high speed tracking with patch initialised from fiducial detector and implement recovery in case marker is lost
 
-- [ ] Week: 3.5 Calibrate Camera
+- [x] Week: 3.5 Calibrate Camera
 
-- [ ] Week4.0: Estimate Pose
+- [x] Week4.0: Estimate Pose
 
 - [ ] Week4.5: Slack week in case above goals aren't met
 
