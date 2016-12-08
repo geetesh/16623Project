@@ -23,6 +23,7 @@ cv::Rect trackerRect;
 NSTimeInterval frameInterval;
 std::string status_string;
 MOSSE tracker;
+float x,y,z;
 
 @interface ViewController () {
     // UI elements
@@ -95,7 +96,8 @@ MOSSE tracker;
 //            objectPoints.at<float>(u*v,1) = v*0.27;
 //            objectPoints.at<float>(u*v,2) = 0.0;
             cv::Point3f p;
-            float s = 0.02571;
+//            float s = 0.02571;
+            float s = 0.02717;
             p.x = u*s;
             p.y = v*s;
             p.z = 0;
@@ -254,7 +256,9 @@ MOSSE tracker;
         } else {visCount++;}
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            fpsText.text = [NSString stringWithFormat:@"fps: %d %s", (int)(1/methodExecution) , status_string.c_str()];
+//            fpsText.text = [NSString stringWithFormat:@"fps: %d %s \t%.1f %.1f %.1f", (int)(1/methodExecution) , status_string.c_str(),x,y,z];
+//            std::printf("\nfps:%03d\tX:%-2.2f\tY:%-2.2f\tZ:%-2.2f", (int)(1/methodExecution),x,y,z);
+            fpsText.text = [NSString stringWithFormat:@"fps:%03d\tX:%-+2.2f\tY:%-+2.2f\tZ:%-+2.2f", (int)(1/methodExecution),x,y,z];
             //                fpsText.text = [NSString stringWithFormat:@"fps: %d %s", (int)(1/frameInterval) , s.c_str()];
         }];
 
@@ -291,13 +295,19 @@ bool findChess(cv::Mat& chessImage, std::vector<cv::Point2f>& corners)
 
 void findPose(std::vector<cv::Point2f>& corners)
 {
-    cv::Mat rvec(3,3,CV_64F);
-    cv::Mat tvec(3,1,CV_64F);
+    cv::Mat rvec(3,3,CV_32F);
+    cv::Mat tvec(3,1,CV_32F);
 //    cv::solvePnPRansac(objectPoints, corners, cameraMatrix, distCoeff, rvec, tvec);
     cv::solvePnP(objectPoints, corners, cameraMatrix, distCoeff, rvec, tvec);
 //    std::cout<<"\nRvec: "<<rvec<<"\n Tvec: "<<tvec;
     cv::transpose(tvec, tvec);
-    std::cout<<"\n"<<tvec;
+    cv::Rodrigues(rvec, rvec);
+    cv::Mat u,l;
+    cv::Vec3d rpy =cv::RQDecomp3x3(rvec,u,l);
+    x = tvec.at<double>(0,0);
+    y = tvec.at<double>(0,1);
+    z = tvec.at<double>(0,2);
+    std::cout<<"\n"<<tvec<<"\t"<<rpy;
 }
 
 // when the start button is pressed
