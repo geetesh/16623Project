@@ -1,7 +1,8 @@
 # 16623Project
 
 ##Realtime Pose Estimation using fiducial marker tracking
-
+### Result Video
+https://www.youtube.com/watch?v=Qr44n7j5_hA
 ##Summary
 Fiducials are a reliable approach when trying to estimate pose accurately. In this project I plan to detect and track a marker in realtime and obtain the pose and render objects in scene relative to this pose.
 
@@ -14,7 +15,8 @@ For AR applications fiducials need to be detected and tracked in realtime. Fiduc
 ##Goals & Deliverables
 * Plan to achieve: Correlation based high speed Fiducial pose estimator. This shall be demonstrated by capturing a video of the APP in action displaying the pose of the fiducial marker at atleast 50FPS.
 
-* Hope to achieve: Use OpenGL ES to render an object in the scene. Manipulate the object motion in the scene. This shall be demonstrated by capturing a video of the APP showing rendering/manipulation of the object at more than 30FPS.
+* Hope to achieve: Use OpenGL ES to render an object in the scene.
+<!-- Manipulate the object motion in the scene. This shall be demonstrated by capturing a video of the APP showing rendering/manipulation of the object at more than 30FPS. -->
 
 ##Schedule
 
@@ -28,6 +30,5 @@ For AR applications fiducials need to be detected and tracked in realtime. Fiduc
 
 - [x] Week4.0: Estimate Pose
 
-- [ ] Week4.5: Slack week in case above goals aren't met
-
-- [ ] Week5: Display/Render an object in scene
+- [x] Week4.5: Slack week in case above goals aren't met
+<!-- [ ] Week5: Display/Render an object in scene -->
